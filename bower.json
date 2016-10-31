@@ -1,0 +1,43 @@
+{
+    "name": "mola-audio",
+    "description": "mola audio",
+    "main": [
+        "lib/Video.js",
+        "lib/Video.styl"
+    ],
+    "authors": [
+        "cxtom <cxtom2008@gmail.com>"
+    ],
+    "license": "MIT",
+    "keywords": [
+        "react",
+        "mola",
+        "download-layer"
+    ],
+    "moduleTypes": "umd",
+    "homepage": "https://github.com/cxtom/mola-audio",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "**/*.log",
+        ".DS_Store",
+        "test",
+        "tests",
+        "src",
+        "example",
+        "tools"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cxtom/mola-audio"
+    },
+    "dependencies": {
+        "classnames": "^2.2.5",
+        "mola": "^1.0.0",
+        "react": "^0.14.8",
+        "react-dom": "^0.14.8",
+        "melon": "^0.3.9"
+    },
+    "version": "1.0.0"
+}
