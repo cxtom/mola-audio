@@ -81,7 +81,7 @@ export class Audio extends Component {
                 onClick={this.onClick}
                 className={cx('mola-audio', className, {'state-playing': playing})}
                 data-type="btn"
-                data-click={`{"act": "b_${playing ? 'pause' : 'play'}"}`}
+                data-click={`{"mod": "audio", "act": "b_${playing ? 'pause' : 'play'}"}`}
                 style={{
                     ...style,
                     top: px2rem(top),
