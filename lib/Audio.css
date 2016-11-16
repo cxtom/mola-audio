@@ -1,0 +1,9 @@
+.mola-audio {
+  display: block;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.mola-audio audio {
+  display: none;
+}

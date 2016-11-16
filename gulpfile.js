@@ -7,7 +7,9 @@
 
 const gulp = require('gulp');
 const babel = require('gulp-babel');
+const stylus = require('gulp-stylus');
 const babelHelpers = require('gulp-babel-external-helpers');
+const nib = require('nib');
 
 const sourcemaps = require('gulp-sourcemaps');
 
@@ -20,10 +22,21 @@ gulp.task('babel', function () {
         .pipe(gulp.dest('lib'));
 });
 
+gulp.task('css', function () {
+    return gulp.src('src/**/*.styl')
+        .pipe(
+            stylus({
+                compress: false,
+                use: [nib()]
+            })
+        )
+        .pipe(gulp.dest('lib'));
+});
+
 gulp.task('stylus', function () {
     return gulp.src('src/**/*.styl').pipe(gulp.dest('lib'));
 });
 
-gulp.task('build', ['babel', 'stylus']);
+gulp.task('build', ['babel', 'stylus', 'css']);
 
 gulp.task('default', ['build']);
