@@ -75,7 +75,8 @@ export class Audio extends Component {
             image,
             playImage,
             src,
-            autoPlay
+            autoPlay,
+            title
         } = this.props;
 
         const playing = this.state.playing;
@@ -101,6 +102,7 @@ export class Audio extends Component {
                     onPlay={this.onPlay}
                     onPause={this.onPause}
                     onEnded={this.onPause}
+                    title={title}
                     ref="audio" />
             </div>
         );
@@ -118,7 +120,8 @@ Audio.propTypes = {
     src: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     playImage: PropTypes.string,
-    autoPlay: PropTypes.bool.isRequired
+    autoPlay: PropTypes.bool.isRequired,
+    title: PropTypes.string
 };
 
 Audio.defaultProps = {
