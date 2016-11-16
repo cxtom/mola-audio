@@ -12,7 +12,6 @@ import {
 } from 'mola';
 
 import cx from 'classnames';
-import domUtil from 'melon/common/util/dom';
 
 export const type = 'Audio';
 export const level = MOLA_COMPONENT_LEVEL_ATOM;
@@ -32,12 +31,7 @@ export class Audio extends Component {
     }
 
     componentDidMount() {
-        domUtil.on(this.refs.audio, 'play', this.onPlay);
-        domUtil.on(this.refs.audio, 'pause', this.onPause);
-        domUtil.on(this.refs.audio, 'ended', this.onPause);
-
         audioPool.push(this.refs.audio);
-
         if (this.props.playImage) {
             const preLoadImage = new Image();
             preLoadImage.src = this.props.playImage;
@@ -45,10 +39,6 @@ export class Audio extends Component {
     }
 
     componentWillUnmount() {
-        domUtil.off(this.refs.audio, 'play', this.onPlay);
-        domUtil.off(this.refs.audio, 'pause', this.onPause);
-        domUtil.off(this.refs.audio, 'ended', this.onPause);
-
         const index = audioPool.indexOf(this.refs.audio);
         if (index > -1) {
             audioPool = audioPool.splice(index, 1);
@@ -108,6 +98,9 @@ export class Audio extends Component {
                     src={src}
                     autoBuffer
                     autoPlay={autoPlay}
+                    onPlay={this.onPlay}
+                    onPause={this.onPause}
+                    onEnded={this.onPause}
                     ref="audio" />
             </div>
         );
