@@ -3,7 +3,7 @@
  * @author lupengyu <ludafa@outlook.com>
  */
 
-const path = require('path');
+// const path = require('path');
 
 const webpack = require('webpack');
 const config = require('./webpack.dev.js');
