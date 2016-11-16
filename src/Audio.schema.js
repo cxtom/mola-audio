@@ -3,7 +3,7 @@
  * @author cxtom <cxtom2008@gmail.com>
  */
 
-export {type, level} from './Video';
+export {type, level} from './Audeo';
 
 export const editorProps = {
     movable: true,
