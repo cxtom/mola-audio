@@ -1,6 +1,6 @@
 {
   "name": "mola-audio",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "A mola audio component",
   "main": "lib/Audio.js",
   "scripts": {

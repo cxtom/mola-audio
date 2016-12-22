@@ -7,14 +7,15 @@ import React, {Component, PropTypes} from 'react';
 
 import {
     registerComponent,
-    MOLA_COMPONENT_LEVEL_ATOM,
     px2rem
 } from 'mola';
 
 import cx from 'classnames';
 
-export const type = 'Audio';
-export const level = MOLA_COMPONENT_LEVEL_ATOM;
+import {
+    type,
+    level
+} from './constants';
 
 let audioPool = [];
 
@@ -113,10 +114,10 @@ export class Audio extends Component {
 Audio.displayName = type;
 
 Audio.propTypes = {
-    top: PropTypes.number.isRequired,
-    left: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
+    top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+    left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+    width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+    height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     src: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     playImage: PropTypes.string,

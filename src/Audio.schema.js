@@ -3,7 +3,7 @@
  * @author cxtom <cxtom2008@gmail.com>
  */
 
-export {type, level} from './Audio';
+export {type, level} from './constants';
 
 export const editorProps = {
     movable: true,
@@ -17,23 +17,31 @@ export default {
     properties: {
         top: {
             'title': 'top',
-            'type': 'number',
-            'default': 0
+            'type': 'string',
+            'format': 'numeric',
+            'formatMinimum': '0',
+            'default': '0'
         },
         left: {
             'title': 'left',
-            'type': 'number',
-            'default': 0
+            'type': 'string',
+            'format': 'numeric',
+            'formatMinimum': '0',
+            'default': '0'
         },
         width: {
             'title': '宽度',
-            'type': 'number',
-            'default': 50
+            'type': 'string',
+            'format': 'numeric',
+            'formatMinimum': '0',
+            'default': '50'
         },
         height: {
             'title': '高度',
-            'type': 'number',
-            'default': 50
+            'type': 'string',
+            'format': 'numeric',
+            'formatMinimum': '0',
+            'default': '50'
         },
         src: {
             title: '音频地址',
