@@ -98,7 +98,7 @@ export class Audio extends Component {
                 }}>
                 <audio
                     src={src}
-                    autoBuffer
+                    preload="auto"
                     autoPlay={autoPlay}
                     onPlay={this.onPlay}
                     onPause={this.onPause}
